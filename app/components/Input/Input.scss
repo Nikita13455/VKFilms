@@ -1,0 +1,45 @@
+@import "./../../styles/variables.scss";
+
+.custom-input {
+    background-color: #393B3C;
+    position: relative;
+    display: flex;
+    border-radius: 8px;
+
+    &::placeholder {
+        color: #FFFFFF80;
+    }
+
+    &__field {
+        width: 100%;
+        display: block;
+        padding: 12px 16px 12px 52px;
+        font-size: 18px;
+        line-height: 24px;
+        color: $white-color;
+        border-radius: 8px;
+        transition: border $transition-3ms;
+
+        &:focus {
+            border: 1px solid $border-color;
+            outline: none;
+            box-shadow: none;
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        top: 12px;
+        left: 16px;
+        transition: fill $transition-3ms;
+
+
+    }
+
+
+}
+
+.custom-input__field:focus~.custom-input__icon {
+    fill: $border-color;
+
+}

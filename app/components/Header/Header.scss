@@ -1,0 +1,71 @@
+@import './../../styles/variables.scss';
+@import './../../styles/mixins';
+
+.header {
+    width: 100%;
+
+
+    padding: 24px 0;
+
+
+
+    &__title {
+        color: white;
+        font-size: 24px;
+        line-height: 32px;
+
+        border-bottom: 1.5px solid transparent;
+        transition: border-bottom-color $transition-3ms;
+        margin: 0;
+        padding: 0 0 8px 0;
+
+        &:hover {
+            border-bottom-color: $pink-color;
+        }
+
+        @include vp-768 {
+            display: none;
+        }
+
+        @include vp-1348 {
+            font-size: 22px;
+            line-height: 30px;
+        }
+
+
+
+    }
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 7fr;
+        gap: 40px;
+
+        @include vp-768 {
+            display: none;
+
+        }
+
+        @include vp-1348 {
+            grid-template-columns: 1fr 1fr;
+        }
+
+    }
+
+    &__input {
+        flex: 1;
+        min-width: 500px;
+
+        @include vp-1348 {
+            min-width: 350px;
+            display: none;
+        }
+
+    }
+}
+
+.header .container {
+    display: flex;
+    gap: 80px;
+    align-items: flex-start;
+}

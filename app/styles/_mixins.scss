@@ -1,0 +1,19 @@
+@import './variables.scss';
+
+@mixin vp-768 {
+    @media (max-width: $mobile-size) {
+        @content;
+    }
+}
+
+@mixin vp-1024 {
+    @media (max-width: $table-size) {
+        @content;
+    }
+}
+
+@mixin vp-1348 {
+    @media (max-width: $desktop-size) {
+        @content;
+    }
+}
