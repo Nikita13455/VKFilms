@@ -1,0 +1,28 @@
+@import './../../styles/variables.scss';
+@import './../../styles/mixins';
+
+.main {
+
+
+    &__photo {
+        width: auto;
+        height: 552px;
+    }
+
+    &__title {
+        color: white;
+        font-size: 48px;
+        line-height: 56px;
+        font-weight: 700;
+    }
+}
+
+.main .container {
+    display: flex;
+    align-items: center;
+
+    @include vp-1024 {
+        flex-direction: column-reverse;
+
+    }
+}

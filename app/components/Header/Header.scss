@@ -48,6 +48,7 @@
 
         @include vp-1348 {
             grid-template-columns: 1fr 1fr;
+            gap: 20px;
         }
 
     }
@@ -62,10 +63,25 @@
         }
 
     }
+
+
+
+    &__content {
+        display: none;
+
+        @include vp-768 {
+            display: flex;
+            gap: 20px;
+        }
+    }
 }
 
 .header .container {
     display: flex;
     gap: 80px;
     align-items: flex-start;
+
+    @include vp-768 {
+        justify-content: space-between;
+    }
 }
