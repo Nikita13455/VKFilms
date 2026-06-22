@@ -9,6 +9,9 @@ const nextConfig = {
       },
     },
   },
+  images: {
+    domains: ['cinemaguide.skillbox.cc'],
+  },
 };
 
 module.exports = nextConfig;

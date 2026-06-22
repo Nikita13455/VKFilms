@@ -1,8 +1,12 @@
+import BestMovieSection from "./components/BestMovieSection/BestMovieSection";
 import { Main } from "./components/Main/Main";
 
 
 export default function Home() {
   return (
-    <Main />
+    <main>
+      <Main />
+      <BestMovieSection />
+    </main>
   );
 }

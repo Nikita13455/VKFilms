@@ -19,3 +19,19 @@ export async function getRandomMovie(): Promise<Movie> {
 
 
 }
+
+export async function getMovieByID(id: string): Promise<Movie> {
+    const response = await fetch(`${URL}/movie/${id}`, {
+        method: "GET"
+
+    })
+
+    if (!response.ok) {
+        throw new Error(`Ошибка fetch'a: ${response.status}`)
+    }
+
+    const data = await response.json()
+
+
+    return movieSchema.parse(data)
+}

@@ -10,9 +10,9 @@ export function Header() {
     return (
         <header className="header">
             <div className="container">
-                <Logo className="header_logo" />
+                <Link href="/"><Logo className="header_logo" /></Link>
                 <div className='header__wrapper'>
-                    <a className='header__title'>Главная</a>
+                    <Link href="/"><p className='header__title'>Главная</p></Link>
                     <a className="header__title">Жанры</a>
                     <Input addClass="header__input" />
                 </div>

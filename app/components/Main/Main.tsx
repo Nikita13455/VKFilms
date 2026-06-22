@@ -1,34 +1,28 @@
+'use client'
+
 import { getRandomMovie } from "@/api/movie";
-import './Main.scss'
+import { Movie } from "@/types/movie";
+import { useEffect, useState } from "react";
+import MovieDetails from "../../components/MovieDetails/MovieDetails";
 
-export async function Main() {
-    try {
-        const movie = await getRandomMovie()
+export function Main() {
+    const [movie, setMovie] = useState<Movie | null>(null)
+    const [isLoading, setLoading] = useState(true)
 
-
-        return (
-            <main className="main">
-                <div className="container">
-                    <div className="main__wrapper">
-                        <h1 className="main__title">
-                            {movie.title}
-                        </h1>
-                    </div>
-                    {movie.posterUrl && (<img className="main__photo" src={movie.posterUrl} alt="Заставка фильма" />)}
-                </div>
-
-            </main>
-        )
-
-    } catch (err) {
-        console.error(`Ошибка при загрузке фильма в Main: ${err}`)
-        return (
-            <div>
-                <p style={{ color: "red" }}>Ошибка загрузки фильма</p>
-            </div>
-        )
+    const fetchMovie = () => {
+        setLoading(true)
+        getRandomMovie()
+            .then(setMovie)
+            .catch(console.error)
+            .finally(() => setLoading(false))
     }
 
+    useEffect(() => {
+        fetchMovie()
+    }, [])
 
+    if (isLoading) return <p style={{ color: 'white' }}>Загрузка...</p>
+    if (!movie) return <p style={{ color: 'red' }}>Ошибка загрузки</p>
 
+    return <MovieDetails movie={movie} showRandomButton onRandomClick={fetchMovie} />
 }

@@ -1,0 +1,74 @@
+@import './../../styles/variables.scss';
+@import './../../styles/mixins';
+
+.best-movies {
+
+    margin: 0 0 80px 0;
+
+
+    &__title {
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 48px;
+        color: $white-color;
+        margin: 0 0 64px 0;
+
+        @include vp-1024 {
+            margin: 0 0 40px 0;
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
+        align-items: flex-start;
+        gap: 20px;
+
+        @include vp-1024 {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    &__item {
+        position: relative;
+        transition: box-shadow $transition-3ms;
+
+        &:hover {
+            box-shadow: 0px 0px 80px 0px #FFFFFF54;
+        }
+
+
+
+
+    }
+
+    &__number {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: -18px;
+        left: -21px;
+        width: 62px;
+        height: 48px;
+        border-radius: 50px;
+        padding: 8px 20px;
+        background-color: $white-color;
+        font-size: 24px;
+        line-height: 32px;
+        color: $viol-color;
+        font-weight: 700;
+    }
+
+
+    &__poster {
+        width: 224px;
+        height: 336px;
+
+        @include vp-768 {
+            width: 300px;
+            height: auto;
+        }
+    }
+}

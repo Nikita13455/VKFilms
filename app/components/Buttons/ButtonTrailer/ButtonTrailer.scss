@@ -1,0 +1,29 @@
+@import './../../../styles/variables.scss';
+@import './../../../styles/mixins';
+
+.buttonTrailer {
+    margin: 0;
+    padding: 16px 48px;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 700;
+    color: $white-color;
+    background-color: $middleblue-color;
+    border-radius: 28px;
+    transition: background-color $transition-3ms;
+
+
+
+    @include vp-768 {
+        width: 100%;
+    }
+
+    &:hover {
+        background-color: $heavy-blue;
+    }
+
+    &:focus {
+        background-color: $heavy-blue;
+        outline: none;
+    }
+}

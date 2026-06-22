@@ -14,7 +14,7 @@ export const movieRaw = z.object({
     revenue: z.union([z.number(), z.string()]).nullable(),
     homepage: z.string().nullable(),
     status: z.string(),
-    posterUrl: z.string().url(),
+    posterUrl: z.string().url().nullable(),
     backdropUrl: z.string().url().nullable(),
     trailerUrl: z.string().url(),
     trailerYouTubeId: z.string(),

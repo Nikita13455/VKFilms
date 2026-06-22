@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.scss";
 import { Header } from "./components/Header/Header";
 import { Play } from "next/font/google";
+import Footer from "./components/Footer/Footer";
 
 const play = Play({
   weight: "400",
@@ -39,7 +40,9 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <Header />
         {children}
+        <Footer />
       </body>
+
     </html>
   );
 }
