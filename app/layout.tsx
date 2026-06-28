@@ -4,6 +4,7 @@ import "./globals.scss";
 import { Header } from "./components/Header/Header";
 import { Play } from "next/font/google";
 import Footer from "./components/Footer/Footer";
+import { Providers } from "./providers";
 
 const play = Play({
   weight: "400",
@@ -33,16 +34,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">
-        <Header />
-        {children}
-        <Footer />
-      </body>
+    <Providers>
+      <html
+        lang="en"
+        className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      >
+        <body className="min-h-full flex flex-col">
+          <Header />
+          {children}
+          <Footer />
+        </body>
 
-    </html>
+      </html>
+    </Providers>
   );
 }

@@ -1,10 +1,16 @@
 @import "./../../styles/variables.scss";
+@import './../../styles/mixins';
 
 .custom-input {
     background-color: #393B3C;
     position: relative;
     display: flex;
     border-radius: 8px;
+    flex-direction: column;
+
+
+
+
 
     &::placeholder {
         color: #FFFFFF80;
@@ -19,12 +25,49 @@
         color: $white-color;
         border-radius: 8px;
         transition: border $transition-3ms;
+        border: 1px solid transparent;
+
+
 
         &:focus {
-            border: 1px solid $border-color;
+            border: 1px solid $white-color;
             outline: none;
             box-shadow: none;
         }
+
+
+    }
+
+    &__list {
+        position: absolute;
+        background-color: $nearblack-color;
+        display: flex;
+        flex-direction: column;
+        top: 100%;
+        padding: 8px;
+        gap: 4px;
+        border-radius: 8px;
+        max-height: 500px;
+        overflow-y: auto;
+        z-index: 10;
+
+
+
+    }
+
+    &__item {
+        z-index: 10;
+        padding: 16px 8px;
+        border-radius: 6px;
+        border: 1px solid transparent;
+        transition: border $transition-3ms;
+
+        &:hover {
+            border: 1px solid $white-color;
+
+        }
+
+
     }
 
     &__icon {
@@ -40,6 +83,76 @@
 }
 
 .custom-input__field:focus~.custom-input__icon {
-    fill: $border-color;
+    fill: $white-color;
+
+}
+
+.search-card {
+    display: flex;
+    gap: 8px;
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    &__error {
+        color: $white-color;
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 500;
+    }
+
+    &__label {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+
+        @include vp-1348 {
+            gap: 8px;
+        }
+    }
+
+    &__mark {
+        padding: 4px 12px;
+        background-color: $green-color;
+        display: flex;
+        gap: 4px;
+        align-items: center;
+        border-radius: 16px;
+
+        &--value {
+            color: $white-color;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 24px;
+        }
+    }
+
+    &__genres {
+        display: flex;
+        gap: 16px;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 24px;
+        color: $white-color;
+
+        @include vp-1348 {
+            font-size: 16px;
+            line-height: 22px;
+        }
+
+        @include vp-1024 {
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+
+
+
 
 }

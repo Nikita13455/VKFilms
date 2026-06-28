@@ -1,6 +1,7 @@
 @import './../../styles/variables.scss';
 @import './../../styles/mixins';
 
+
 .header {
     width: 100%;
 
@@ -23,7 +24,7 @@
             border-bottom-color: $pink-color;
         }
 
-        @include vp-768 {
+        @include vp-1024 {
             display: none;
         }
 
@@ -41,14 +42,14 @@
         grid-template-columns: 1fr 1fr 7fr;
         gap: 40px;
 
-        @include vp-768 {
+        @include vp-1024 {
             display: none;
 
         }
 
         @include vp-1348 {
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            grid-template-columns: 1fr 1fr 5fr;
+            gap: 10px;
         }
 
     }
@@ -57,9 +58,27 @@
         flex: 1;
         min-width: 500px;
 
-        @include vp-1348 {
+        &-mobile {
+            width: 100%;
+        }
+
+        &-close {
+            position: absolute;
+            top: 20%;
+            right: 10%;
+        }
+
+
+        @include vp-768 {
             min-width: 350px;
             display: none;
+
+        }
+
+
+
+        @include vp-1348 {
+            min-width: 490px;
         }
 
     }
@@ -69,7 +88,7 @@
     &__content {
         display: none;
 
-        @include vp-768 {
+        @include vp-1024 {
             display: flex;
             gap: 20px;
         }
@@ -80,8 +99,19 @@
     display: flex;
     gap: 80px;
     align-items: flex-start;
+    position: relative;
+
 
     @include vp-768 {
+        justify-content: space-between;
+    }
+
+    @include vp-1348 {
+        gap: 20px;
+    }
+
+    @include vp-1024 {
+        gap: 10px;
         justify-content: space-between;
     }
 }

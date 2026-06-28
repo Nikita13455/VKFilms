@@ -1,0 +1,41 @@
+@import './../../styles/variables.scss';
+@import './../../styles/mixins';
+
+.input {
+
+    position: relative;
+
+    &__field {
+        min-width: 340px;
+        padding: 16px 16px 16px 52px;
+        border-radius: 8px;
+        border: 1px solid $grey-color;
+        transition: border $transition-3ms;
+
+
+
+        &:focus {
+            outline: none;
+            border: 1px solid $border-color;
+
+        }
+
+        @include vp-1024 {
+            min-width: 295px;
+        }
+
+    }
+
+    &__icon {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 16px;
+        transition: fill $transition-3ms;
+
+    }
+}
+
+.input__field:focus~.input__icon {
+    fill: $border-color;
+}

@@ -1,0 +1,15 @@
+@import './../../styles/variables.scss';
+@import './../../styles/mixins';
+
+.enter-button {
+    color: $white-color;
+    width: 100%;
+    padding: 16px;
+    background-color: $middleblue-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    border-radius: 28px;
+    cursor: pointer;
+}

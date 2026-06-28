@@ -1,0 +1,84 @@
+@import './../../../styles/variables.scss';
+@import './../../../styles/mixins';
+
+.auth {
+    position: absolute;
+    top: 15%;
+    left: 40%;
+    padding: 64px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $white-color ;
+    width: 420px;
+    min-height: 450px;
+    margin: 0 auto;
+    border-radius: 24px;
+    gap: 40px;
+    z-index: 11;
+
+    @include vp-1024 {
+        left: 30%;
+        width: 350px;
+    }
+
+    @include vp-768 {
+        left: 8%;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    &__switch {
+        cursor: pointer;
+    }
+
+    &__close {
+        height: 48px;
+        width: 48px;
+        background-color: $white-color;
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        right: -15%;
+        display: flex;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+
+        @include vp-768 {
+            right: 0;
+            background-color: transparent;
+        }
+    }
+
+    &__modal {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        align-items: center;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    &__title {
+        margin: 0;
+        padding: 0;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 32px;
+
+    }
+
+    &__svg {
+        transition: fill $transition-3ms;
+
+        &:hover {
+            fill: $border-color;
+        }
+    }
+}

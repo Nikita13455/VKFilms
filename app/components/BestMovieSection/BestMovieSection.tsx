@@ -16,7 +16,7 @@ export default async function BestMovieSection() {
                             <div className="best-movies__number">{index + 1}</div>
                             <Link href={`/films/${String(item.id)}`}>
 
-                                <Image className="best-movies__poster" width={224} height={336} src={item.posterUrl || ''} alt={item.title || ''} />
+                                {item.posterUrl === null ? <p>Нет фото</p> : (<Image className="best-movies__poster" width={224} height={336} src={item.posterUrl || ''} alt={item.title || ''} />)}
                             </Link>
                         </li>
 

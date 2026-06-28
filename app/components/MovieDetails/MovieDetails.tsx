@@ -20,13 +20,24 @@ type MovieDetailsProps = {
 export default function MovieDetails({ movie, showRandomButton = false, onRandomClick }: MovieDetailsProps) {
     const [isOpen, setOpen] = useState(false)
 
+    const getRatingColor = (rating: number | null | undefined): string => {
+        if (!rating) return '#6c757d' // серый по умолчанию
+
+        if (rating < 4.2) return '#dc3545' // красный
+        if (rating >= 4.2 && rating < 6.3) return '#6c757d' // серый
+        if (rating >= 6.3 && rating < 7.2) return '#28a745' // зеленый
+        return '#ffd700' // золотой (7.2 и выше)
+    }
+
+    const ratingColor = getRatingColor(movie.tmdbRating)
+
     return (
         <>
             <section className="main">
                 <div className="container">
                     <div className="main__wrapper">
                         <div className="main__label">
-                            <div className="main__mark">
+                            <div className="main__mark" style={{ backgroundColor: ratingColor }}>
                                 <Star />
                                 <p className="main__mark--value">{movie.tmdbRating}</p>
                             </div>

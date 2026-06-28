@@ -1,0 +1,56 @@
+@import './../../styles/variables.scss';
+@import './../../styles/mixins';
+
+.genres {
+
+    &__item {
+        position: relative;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0px 0px 80px 0px #FFFFFF54;
+        border: 1px solid transparent;
+
+        &:hover {
+            border: 1px solid $white-color;
+        }
+    }
+
+
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+        align-items: flex-start;
+        gap: 40px;
+
+    }
+
+    &__image {
+        height: 310px;
+        width: auto;
+        border-radius: 24px;
+        object-fit: cover;
+    }
+
+    &__title {
+        color: $white-color;
+        margin: 0 0 64px 0;
+        font-size: 40px;
+        line-height: 48px;
+        font-weight: 700;
+    }
+
+    &__head {
+        position: absolute;
+        bottom: 0;
+        color: $white-color;
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 700;
+        background-color: #0A0B0B;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 22px 0;
+    }
+}

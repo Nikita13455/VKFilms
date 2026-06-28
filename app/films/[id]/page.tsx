@@ -1,4 +1,5 @@
 import { getMovieByID } from "@/api/movie";
+import MovieAbout from "@/app/components/MovieAbout/MovieAbout";
 import MovieDetails from "@/app/components/MovieDetails/MovieDetails";
 import Image from "next/image";
 
@@ -14,9 +15,12 @@ export default async function Film({ params }: paramsProps) {
     const movie = await getMovieByID(id)
 
 
-    console.log(movie)
+
 
     return (
-        <MovieDetails movie={movie} />
+        <>
+            <MovieDetails movie={movie} />
+            <MovieAbout movie={movie} />
+        </>
     )
 }
