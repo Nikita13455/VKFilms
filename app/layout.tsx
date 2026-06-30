@@ -5,6 +5,7 @@ import { Header } from "./components/Header/Header";
 import { Play } from "next/font/google";
 import Footer from "./components/Footer/Footer";
 import { Providers } from "./providers";
+import { AuthChecker } from "./AuthChecker";
 
 const play = Play({
   weight: "400",
@@ -40,9 +41,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
       >
         <body className="min-h-full flex flex-col">
-          <Header />
-          {children}
-          <Footer />
+          <AuthChecker>
+            <Header />
+            {children}
+            <Footer />
+          </AuthChecker>
         </body>
 
       </html>

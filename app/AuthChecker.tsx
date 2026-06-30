@@ -1,3 +1,5 @@
+'use client'
+
 import { checkAuth } from "@/store/slices/userSlice";
 import { useEffect } from "react";
 import { useAppDispatch } from "@/store/hooks/useAppDispatch";

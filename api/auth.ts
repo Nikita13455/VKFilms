@@ -34,3 +34,16 @@ export async function getProfile() {
 
     return response.json()
 }
+
+export async function logout() {
+    const response = await fetch(`${URL}/auth/logout`, {
+        method: 'GET',
+        credentials: 'include'
+    })
+
+    if (!response.ok) {
+        throw new Error('Ошибка выхода')
+    }
+
+    return response.json()
+}

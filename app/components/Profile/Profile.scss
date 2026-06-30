@@ -1,0 +1,84 @@
+@import './../../styles/variables.scss';
+@import './../../styles/mixins';
+
+.profile {
+    height: 100vh;
+
+    &__title {
+        font-size: 48px;
+        line-height: 56px;
+        color: $white-color;
+        margin: 0 0 64px 0;
+    }
+
+    &__navs {
+        display: flex;
+        gap: 64px;
+        margin: 0 0 64px 0;
+    }
+
+    &__unit {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        transition: border-bottom $transition-3ms;
+        padding: 0 0 8px 0;
+
+        &:hover {
+            border-bottom: 1px solid $pink-color;
+        }
+    }
+
+    &__button {
+        font-size: 24px;
+        line-height: 32px;
+        color: $white-color;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    &__ceil {
+        display: flex;
+        gap: 16px;
+    }
+
+    &__short {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 18px;
+        border-radius: 100%;
+        background: var(--background-disabled, #FFFFFF80);
+        width: 60px;
+        height: 60px;
+        color: $white-color;
+
+    }
+
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    &__indicate {
+        font-size: 18px;
+        line-height: 24px;
+        color: $white-color;
+    }
+
+    &__private {
+        font-size: 24px;
+        line-height: 32px;
+        color: $white-color;
+        font-weight: 700;
+    }
+
+    &__logout {
+        max-width: 262px;
+    }
+}

@@ -47,7 +47,7 @@ export function Header() {
                                 <Link href="/genres"><p className="header__title">Жанры</p></Link>
                                 <Input addClass="header__input" />
                             </div>
-                            {isAuth ? (<a className="header__title">{user.name}</a>) : (<a className="header__title" onClick={() => setAuthModalOpen(true)} >Войти</a>)}
+                            {isAuth ? (<Link href="/profile"><p className="header__title">{user.name}</p></Link>) : (<a className="header__title" onClick={() => setAuthModalOpen(true)} >Войти</a>)}
                             <div className='header__content'>
                                 <Link href='/genres'><Genres className="header__mark genre" /></Link>
                                 <Search className="header__mark search" onClick={() => setHeader(true)} />
